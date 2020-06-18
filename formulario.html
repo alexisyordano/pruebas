@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>Formulario a Validar</title>
+
+	</head>
+			<script type="text/javascript">
+			//declaro la funcion validar llamada desde el formulario//
+			function validar() 
+			{
+				var nombre = document.getElementById("nombre").value;
+				if (nombre.length == 0 || /^\s+$/.test(nombre)) 
+				{
+					alert('El campo nombre esta vacio');
+					return false;
+				}
+
+				var apellidos = document.getElementById("apellidos").value;
+				if (apellidos.length == 0 || /^\s+$/.test(apellidos)) 
+				{
+					alert('El campo apellidos esta vacio');
+					return false;
+				}
+
+				var cedula = document.getElementById("cedula").value;
+				if (cedula.length == 0 || /^\s+$/.test(cedula)) 
+				{
+					alert('El campo cedula esta vacio');
+					return false;
+				}
+				var contrasena = document.getElementById("contrasena").value;
+				if (contrasena.length == 0 || /^\s+$/.test(contrasena)) 
+				{
+					alert('El campo contrasena esta vacio');
+					return false;
+				}
+
+				return true;
+			}
+			</script>
+	<body>
+		<form action="" onsubmit="return validar()">
+			<fieldset>
+				<legend>Alta en el servicio</legend>
+				<div>
+					<label for="nombre">Nombre</label>
+					<input type="text" name="nombre" id="nombre" />
+				</div>
+		 
+				<div>
+					<label for="apellidos">Apellidos</label>
+					<input type="text" name="apellidos" id="apellidos" size="50" />
+				</div>
+
+				<div>
+					<label for="cedula">C&eacute;dula</label>
+					<input type="text" name="cedula" id="cedula" size="10" maxlength="9" />
+				</div>
+				
+				<div>
+					<label for="contrasena">Contrase&ntilde;a</label>
+					<input type="password" name="contrasena" id="contrasena" />
+				</div>
+		 
+				<div>
+					<input class="btn" type="submit" value="Registrarse" />
+				</div>
+			</fieldset>
+		</form>
+	</body>
+</html>
